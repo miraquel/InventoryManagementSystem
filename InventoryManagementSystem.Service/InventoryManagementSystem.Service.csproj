@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>8599ed85-ab8c-465f-a384-f22fd895fbde</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Riok.Mapperly" Version="4.2.1" />
+    <PackageReference Include="System.ServiceModel.Duplex" Version="4.10.*" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.10.*" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.10.*" />
+    <PackageReference Include="System.ServiceModel.Security" Version="4.10.*" />
+    <PackageReference Include="System.ServiceModel.Federation" Version="4.10.*" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\InventoryManagementSystem.Dto\InventoryManagementSystem.Dto.csproj" />
+    <ProjectReference Include="..\InventoryManagementSystem.Service.Interface\InventoryManagementSystem.Service.Interface.csproj" />
+  </ItemGroup>
+</Project>
