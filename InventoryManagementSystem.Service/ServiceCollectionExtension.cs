@@ -1,6 +1,8 @@
 ﻿using System.ServiceModel;
+using InventoryManagementSystem.Service.Data;
 using InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup;
 using InventoryManagementSystem.Service.Interface;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -43,6 +45,27 @@ public static class ServiceCollectionExtension
             return client;
         });
         
+        services.AddSingleton<ICallContextFactory, CallContextFactory>();
         services.AddScoped<ICountingService, CountingService>();
+        services.AddScoped<ILocationService, LocationService>();
+        services.AddScoped<IInventTableService, InventTableService>();
+        
+        // Add Keycloak Admin Service with HttpClient
+        services.AddHttpClient<IKeycloakAdminService, KeycloakAdminService>();
+        
+        // Add APK Version Service
+        services.AddScoped<IApkVersionService, ApkVersionService>();
+    }
+    
+    /// <summary>
+    /// Adds MySQL database context for APK version management
+    /// </summary>
+    public static void AddApkDatabase(this IServiceCollection services, IConfiguration configuration)
+    {
+        var connectionString = configuration.GetConnectionString("ApkDatabase") 
+            ?? throw new InvalidOperationException("ApkDatabase connection string is not configured");
+        
+        services.AddDbContext<ApkDbContext>(options =>
+            options.UseMySQL(connectionString));
     }
 }

@@ -1,6 +1,11 @@
 ﻿namespace InventoryManagementSystem.Dto.Common;
 public class PagedListDto<T>
 {
+    public PagedListDto()
+    {
+        Items = [];
+    }
+    
     public PagedListDto(IEnumerable<T> items, int pageNumber, int pageSize, int totalCount)
     {
         Items = items;

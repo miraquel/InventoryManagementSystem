@@ -1,0 +1,189 @@
+﻿@page
+@model InventoryManagementSystem.API.Pages.Apk.IndexModel
+@{
+    ViewData["Title"] = "APK Version Management";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .version-badge { font-size: 0.9rem; }
+        .latest-badge { background-color: #198754 !important; }
+        .app-card { transition: transform 0.2s; }
+        .app-card:hover { transform: translateY(-5px); }
+        .download-btn { min-width: 120px; }
+    </style>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="/apk">
+                <i class="bi bi-android2 me-2"></i>APK Version Manager
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="/apk/upload">
+                    <i class="bi bi-upload me-1"></i>Upload APK
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Filter Section -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <form method="get" class="row g-3">
+                    <div class="col-md-4">
+                        <label class="form-label">Package Name</label>
+                        <select name="packageName" class="form-select" onchange="this.form.submit()">
+                            <option value="">All Packages</option>
+                            @foreach (var app in Model.Apps)
+                            {
+                                <option value="@app" selected="@(Model.PackageName == app)">@app</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label">Filter</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="latestOnly" value="true" 
+                                   id="latestOnly" @(Model.LatestOnly ? "checked" : "") onchange="this.form.submit()">
+                            <label class="form-check-label" for="latestOnly">
+                                Show Latest Only
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-end">
+                        <a href="/apk" class="btn btn-outline-secondary">Clear Filters</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Statistics -->
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="card text-white bg-primary">
+                    <div class="card-body text-center">
+                        <h3>@Model.TotalCount</h3>
+                        <p class="mb-0">Total Versions</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-white bg-success">
+                    <div class="card-body text-center">
+                        <h3>@Model.Apps.Count()</h3>
+                        <p class="mb-0">Applications</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-white bg-info">
+                    <div class="card-body text-center">
+                        <h3>@Model.Versions.Count(v => v.IsLatest)</h3>
+                        <p class="mb-0">Latest Versions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Versions List -->
+        @if (!Model.Versions.Any())
+        {
+            <div class="alert alert-info">
+                <i class="bi bi-info-circle me-2"></i>
+                No APK versions found. <a href="/apk/upload" class="alert-link">Upload your first APK</a>
+            </div>
+        }
+        else
+        {
+            <div class="table-responsive">
+                <table class="table table-hover bg-white shadow-sm rounded">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>App Name</th>
+                            <th>Package</th>
+                            <th>Version</th>
+                            <th>Size</th>
+                            <th>Uploaded</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var version in Model.Versions)
+                        {
+                            <tr>
+                                <td>
+                                    <strong>@version.AppName</strong>
+                                    @if (version.IsLatest)
+                                    {
+                                        <span class="badge latest-badge ms-2">Latest</span>
+                                    }
+                                </td>
+                                <td><code>@version.PackageName</code></td>
+                                <td>
+                                    <span class="badge bg-secondary version-badge">
+                                        v@(version.VersionName) (Build @version.VersionCode)
+                                    </span>
+                                </td>
+                                <td>@version.FileSizeFormatted</td>
+                                <td>@version.CreatedAt.ToString("MMM dd, yyyy HH:mm")</td>
+                                <td>
+                                    <div class="btn-group btn-group-sm">
+                                        <a href="/api/apk/@version.Id/download" class="btn btn-success download-btn">
+                                            <i class="bi bi-download me-1"></i>Download
+                                        </a>
+                                        <a href="/apk/details/@version.Id" class="btn btn-outline-primary">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a href="/api/apk/appcast/@version.PackageName" class="btn btn-outline-info" target="_blank">
+                                            <i class="bi bi-rss"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            @if (Model.TotalPages > 1)
+            {
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item @(Model.Page == 1 ? "disabled" : "")">
+                            <a class="page-link" href="?page=@(Model.Page-1)&packageName=@Model.PackageName&latestOnly=@Model.LatestOnly">Previous</a>
+                        </li>
+                        @for (int i = 1; i <= Model.TotalPages; i++)
+                        {
+                            <li class="page-item @(Model.Page == i ? "active" : "")">
+                                <a class="page-link" href="?page=@i&packageName=@Model.PackageName&latestOnly=@Model.LatestOnly">@i</a>
+                            </li>
+                        }
+                        <li class="page-item @(Model.Page == Model.TotalPages ? "disabled" : "")">
+                            <a class="page-link" href="?page=@(Model.Page+1)&packageName=@Model.PackageName&latestOnly=@Model.LatestOnly">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            }
+        }
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <small>&copy; @DateTime.Now.Year APK Version Manager</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

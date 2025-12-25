@@ -1,0 +1,205 @@
+﻿@page "{id:int}"
+@model InventoryManagementSystem.API.Pages.Apk.DetailsModel
+@{
+    ViewData["Title"] = Model.Version != null ? $"{Model.Version.AppName} v{Model.Version.VersionName}" : "APK Details";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .detail-label { font-weight: 600; color: #6c757d; }
+        .hash-code { font-family: monospace; font-size: 0.85rem; word-break: break-all; }
+    </style>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="/apk">
+                <i class="bi bi-android2 me-2"></i>APK Version Manager
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="/apk">
+                    <i class="bi bi-arrow-left me-1"></i>Back to List
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        @if (Model.Version == null)
+        {
+            <div class="alert alert-danger">
+                <i class="bi bi-exclamation-triangle me-2"></i>
+                APK version not found.
+            </div>
+        }
+        else
+        {
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                            <h4 class="mb-0">
+                                <i class="bi bi-app me-2"></i>@Model.Version.AppName
+                            </h4>
+                            @if (Model.Version.IsLatest)
+                            {
+                                <span class="badge bg-success">Latest Version</span>
+                            }
+                        </div>
+                        <div class="card-body">
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                    <span class="detail-label">Package Name</span>
+                                    <p><code>@Model.Version.PackageName</code></p>
+                                </div>
+                                <div class="col-md-4">
+                                    <span class="detail-label">Version Name</span>
+                                    <p>@Model.Version.VersionName</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <span class="detail-label">Version Code</span>
+                                    <p>@Model.Version.VersionCode</p>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                    <span class="detail-label">File Size</span>
+                                    <p>@Model.Version.FileSizeFormatted</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <span class="detail-label">Min Android Version</span>
+                                    <p>@(Model.Version.MinAndroidVersion ?? "Not specified")</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <span class="detail-label">Uploaded By</span>
+                                    <p>@(Model.Version.UploadedBy ?? "Unknown")</p>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <span class="detail-label">Created At</span>
+                                    <p>@Model.Version.CreatedAt.ToString("MMMM dd, yyyy HH:mm:ss")</p>
+                                </div>
+                                <div class="col-md-6">
+                                    <span class="detail-label">Updated At</span>
+                                    <p>@(Model.Version.UpdatedAt?.ToString("MMMM dd, yyyy HH:mm:ss") ?? "Never")</p>
+                                </div>
+                            </div>
+                            @if (!string.IsNullOrEmpty(Model.Version.Sha256Hash))
+                            {
+                                <div class="mb-3">
+                                    <span class="detail-label">SHA-256 Hash</span>
+                                    <p class="hash-code bg-light p-2 rounded">@Model.Version.Sha256Hash</p>
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                    <!-- Release Notes -->
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-white">
+                            <h5 class="mb-0"><i class="bi bi-journal-text me-2"></i>Release Notes</h5>
+                        </div>
+                        <div class="card-body">
+                            @if (!string.IsNullOrEmpty(Model.Version.ReleaseNotes))
+                            {
+                                <p class="mb-0" style="white-space: pre-line">@Model.Version.ReleaseNotes</p>
+                            }
+                            else
+                            {
+                                <p class="text-muted mb-0">No release notes available.</p>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <!-- Download Card -->
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0"><i class="bi bi-download me-2"></i>Download</h5>
+                        </div>
+                        <div class="card-body text-center">
+                            <p class="mb-3">Download this APK version directly.</p>
+                            <a href="/api/apk/@Model.Version.Id/download" class="btn btn-success btn-lg w-100">
+                                <i class="bi bi-download me-2"></i>Download APK
+                            </a>
+                            <small class="text-muted d-block mt-2">@Model.Version.FileSizeFormatted</small>
+                        </div>
+                    </div>
+
+                    <!-- Appcast Card -->
+                    <div class="card shadow-sm mb-4">
+                        <div class="card-header bg-info text-white">
+                            <h5 class="mb-0"><i class="bi bi-rss me-2"></i>Appcast Feed</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="mb-2">Use this URL for auto-updates:</p>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control form-control-sm" 
+                                       value="@($"{Model.BaseUrl}/api/apk/appcast/{Model.Version.PackageName}")" 
+                                       id="appcastUrl" readonly>
+                                <button class="btn btn-outline-secondary btn-sm" type="button" onclick="copyAppcastUrl()">
+                                    <i class="bi bi-clipboard"></i>
+                                </button>
+                            </div>
+                            <a href="/api/apk/appcast/@Model.Version.PackageName" target="_blank" class="btn btn-outline-info btn-sm w-100">
+                                <i class="bi bi-box-arrow-up-right me-1"></i>View Appcast XML
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Other Versions -->
+                    @if (Model.OtherVersions.Any())
+                    {
+                        <div class="card shadow-sm">
+                            <div class="card-header bg-white">
+                                <h5 class="mb-0"><i class="bi bi-clock-history me-2"></i>Other Versions</h5>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                @foreach (var v in Model.OtherVersions.Take(5))
+                                {
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <a href="/apk/details/@v.Id" class="text-decoration-none">
+                                            v@(v.VersionName)
+                                            @if (v.IsLatest)
+                                            {
+                                                <span class="badge bg-success ms-1">Latest</span>
+                                            }
+                                        </a>
+                                        <small class="text-muted">@v.CreatedAt.ToString("MMM dd")</small>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <small>&copy; @DateTime.Now.Year APK Version Manager</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function copyAppcastUrl() {
+            var copyText = document.getElementById("appcastUrl");
+            copyText.select();
+            document.execCommand("copy");
+            alert("Appcast URL copied to clipboard!");
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,196 @@
+﻿@page
+@model InventoryManagementSystem.API.Pages.Apk.UploadModel
+@{
+    ViewData["Title"] = "Upload APK";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .upload-zone {
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .upload-zone:hover, .upload-zone.dragover {
+            border-color: #0d6efd;
+            background-color: #f8f9fa;
+        }
+        .upload-zone i {
+            font-size: 3rem;
+            color: #6c757d;
+        }
+        .file-selected {
+            background-color: #d4edda;
+            border-color: #28a745;
+        }
+        .file-selected i {
+            color: #28a745;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="/apk">
+                <i class="bi bi-android2 me-2"></i>APK Version Manager
+            </a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="/apk">
+                    <i class="bi bi-arrow-left me-1"></i>Back to List
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white">
+                        <h4 class="mb-0"><i class="bi bi-upload me-2"></i>Upload New APK Version</h4>
+                    </div>
+                    <div class="card-body">
+                        @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+                        {
+                            <div class="alert alert-danger">
+                                <i class="bi bi-exclamation-triangle me-2"></i>@Model.ErrorMessage
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrEmpty(Model.SuccessMessage))
+                        {
+                            <div class="alert alert-success">
+                                <i class="bi bi-check-circle me-2"></i>@Model.SuccessMessage
+                            </div>
+                        }
+
+                        <form method="post" enctype="multipart/form-data" id="uploadForm">
+                            <div class="mb-4">
+                                <label class="form-label">APK File *</label>
+                                <div class="upload-zone" id="uploadZone" onclick="document.getElementById('apkFile').click()">
+                                    <i class="bi bi-cloud-arrow-up"></i>
+                                    <p class="mt-2 mb-0" id="uploadText">Drop APK file here or click to browse</p>
+                                    <small class="text-muted">Maximum file size: 500 MB</small>
+                                </div>
+                                <input type="file" id="apkFile" name="ApkFile" accept=".apk" class="d-none" required>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">App Name *</label>
+                                    <input type="text" class="form-control" name="AppName" placeholder="My Android App" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Package Name *</label>
+                                    <input type="text" class="form-control" name="PackageName" placeholder="com.example.myapp" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Version Name *</label>
+                                    <input type="text" class="form-control" name="VersionName" placeholder="1.0.0" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Version Code *</label>
+                                    <input type="number" class="form-control" name="VersionCode" placeholder="1" min="1" required>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Min Android Version</label>
+                                <select class="form-select" name="MinAndroidVersion">
+                                    <option value="">Select minimum Android version</option>
+                                    <option value="21">Android 5.0 (API 21)</option>
+                                    <option value="23">Android 6.0 (API 23)</option>
+                                    <option value="24">Android 7.0 (API 24)</option>
+                                    <option value="26">Android 8.0 (API 26)</option>
+                                    <option value="28">Android 9.0 (API 28)</option>
+                                    <option value="29">Android 10 (API 29)</option>
+                                    <option value="30">Android 11 (API 30)</option>
+                                    <option value="31">Android 12 (API 31)</option>
+                                    <option value="33">Android 13 (API 33)</option>
+                                    <option value="34">Android 14 (API 34)</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label">Release Notes</label>
+                                <textarea class="form-control" name="ReleaseNotes" rows="4" placeholder="What's new in this version..."></textarea>
+                            </div>
+
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <a href="/apk" class="btn btn-outline-secondary">Cancel</a>
+                                <button type="submit" class="btn btn-primary" id="submitBtn">
+                                    <i class="bi bi-upload me-1"></i>Upload APK
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <small>&copy; @DateTime.Now.Year APK Version Manager</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const uploadZone = document.getElementById('uploadZone');
+        const apkFile = document.getElementById('apkFile');
+        const uploadText = document.getElementById('uploadText');
+        const submitBtn = document.getElementById('submitBtn');
+
+        uploadZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadZone.classList.add('dragover');
+        });
+
+        uploadZone.addEventListener('dragleave', () => {
+            uploadZone.classList.remove('dragover');
+        });
+
+        uploadZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadZone.classList.remove('dragover');
+            const files = e.dataTransfer.files;
+            if (files.length > 0 && files[0].name.endsWith('.apk')) {
+                apkFile.files = files;
+                updateFileDisplay(files[0]);
+            }
+        });
+
+        apkFile.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                updateFileDisplay(e.target.files[0]);
+            }
+        });
+
+        function updateFileDisplay(file) {
+            uploadZone.classList.add('file-selected');
+            const sizeMB = (file.size / (1024 * 1024)).toFixed(2);
+            uploadText.innerHTML = '<strong>' + file.name + '</strong><br><small class="text-muted">' + sizeMB + ' MB</small>';
+        }
+
+        document.getElementById('uploadForm').addEventListener('submit', function() {
+            submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Uploading...';
+            submitBtn.disabled = true;
+        });
+    </script>
+</body>
+</html>
+

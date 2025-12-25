@@ -112,50 +112,192 @@ namespace InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="XppObjectBase", Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp")]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTableDataContract))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTransDataContract))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTablePagedDataContract))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTransPagedDataContract))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKServiceResponseDataContract))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKBatchDataContract))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKBatchPagedListDataContract))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalCreateDataContract))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKServiceResponseDataContract))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTableDataContract))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTablePagedDataContract))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTransDataContract))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTransPagedDataContract))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventLocationDataContract))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventTableDataContract))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventTablePagedListDataContract))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKOnHandDataContract))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKOnHandPagedListDataContract))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKWMSLocationDataContract))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKWMSLocationPagedListDataContract))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKCountingJournalSummaryDataContract))]
     public partial class XppObjectBase : object
     {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GMKInventJournalTableDataContract", Namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application")]
-    public partial class GMKInventJournalTableDataContract : InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.XppObjectBase
+    [System.Runtime.Serialization.DataContractAttribute(Name="GMKBatchDataContract", Namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application")]
+    public partial class GMKBatchDataContract : InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.XppObjectBase
     {
         
-        private string CreatedByField;
+        private System.DateTime ExpDateField;
         
-        private string DescriptionField;
+        private string InventBatchIdField;
         
-        private InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTransDataContract[] InventJournalTransField;
+        private string ItemIdField;
         
-        private string JournalIdField;
-        
-        private string JournalNameIdField;
-        
-        private int NumOfLinesField;
-        
-        private InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.NoYes PostedField;
-        
-        private string PostedUserIdField;
+        private System.DateTime ProdDateField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string CreatedBy
+        public System.DateTime ExpDate
         {
             get
             {
-                return this.CreatedByField;
+                return this.ExpDateField;
             }
             set
             {
-                this.CreatedByField = value;
+                this.ExpDateField = value;
             }
         }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string InventBatchId
+        {
+            get
+            {
+                return this.InventBatchIdField;
+            }
+            set
+            {
+                this.InventBatchIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ItemId
+        {
+            get
+            {
+                return this.ItemIdField;
+            }
+            set
+            {
+                this.ItemIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ProdDate
+        {
+            get
+            {
+                return this.ProdDateField;
+            }
+            set
+            {
+                this.ProdDateField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GMKBatchPagedListDataContract", Namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application")]
+    public partial class GMKBatchPagedListDataContract : InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.XppObjectBase
+    {
+        
+        private InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKBatchDataContract[] ItemsField;
+        
+        private int PageNumberField;
+        
+        private int PageSizeField;
+        
+        private int TotalCountField;
+        
+        private int TotalPagesField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKBatchDataContract[] Items
+        {
+            get
+            {
+                return this.ItemsField;
+            }
+            set
+            {
+                this.ItemsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PageNumber
+        {
+            get
+            {
+                return this.PageNumberField;
+            }
+            set
+            {
+                this.PageNumberField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PageSize
+        {
+            get
+            {
+                return this.PageSizeField;
+            }
+            set
+            {
+                this.PageSizeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TotalCount
+        {
+            get
+            {
+                return this.TotalCountField;
+            }
+            set
+            {
+                this.TotalCountField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TotalPages
+        {
+            get
+            {
+                return this.TotalPagesField;
+            }
+            set
+            {
+                this.TotalPagesField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GMKInventJournalCreateDataContract", Namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application")]
+    public partial class GMKInventJournalCreateDataContract : InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.XppObjectBase
+    {
+        
+        private string DescriptionField;
+        
+        private string InventBatchIdField;
+        
+        private string InventLocationIdField;
+        
+        private string InventSiteIdField;
+        
+        private string SlsNoField;
+        
+        private string WMSLocationIdField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string Description
@@ -171,15 +313,188 @@ namespace InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTransDataContract[] InventJournalTrans
+        public string InventBatchId
         {
             get
             {
-                return this.InventJournalTransField;
+                return this.InventBatchIdField;
             }
             set
             {
-                this.InventJournalTransField = value;
+                this.InventBatchIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string InventLocationId
+        {
+            get
+            {
+                return this.InventLocationIdField;
+            }
+            set
+            {
+                this.InventLocationIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string InventSiteId
+        {
+            get
+            {
+                return this.InventSiteIdField;
+            }
+            set
+            {
+                this.InventSiteIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SlsNo
+        {
+            get
+            {
+                return this.SlsNoField;
+            }
+            set
+            {
+                this.SlsNoField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WMSLocationId
+        {
+            get
+            {
+                return this.WMSLocationIdField;
+            }
+            set
+            {
+                this.WMSLocationIdField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GMKServiceResponseDataContract", Namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application")]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTableDataContract))]
+    public partial class GMKServiceResponseDataContract : InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.XppObjectBase
+    {
+        
+        private string MessageField;
+        
+        private bool SuccessField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message
+        {
+            get
+            {
+                return this.MessageField;
+            }
+            set
+            {
+                this.MessageField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Success
+        {
+            get
+            {
+                return this.SuccessField;
+            }
+            set
+            {
+                this.SuccessField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GMKInventJournalTableDataContract", Namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application")]
+    public partial class GMKInventJournalTableDataContract : InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKServiceResponseDataContract
+    {
+        
+        private string BlockUserIdField;
+        
+        private string CreatedByField;
+        
+        private System.DateTime CreatedDateTimeField;
+        
+        private string DescriptionField;
+        
+        private string JournalIdField;
+        
+        private string JournalNameIdField;
+        
+        private int JournalSessionIdField;
+        
+        private string ModifiedByField;
+        
+        private System.DateTime ModifiedDateTimeField;
+        
+        private int NumOfLinesField;
+        
+        private InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.NoYes PostedField;
+        
+        private string PostedUserIdField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string BlockUserId
+        {
+            get
+            {
+                return this.BlockUserIdField;
+            }
+            set
+            {
+                this.BlockUserIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CreatedBy
+        {
+            get
+            {
+                return this.CreatedByField;
+            }
+            set
+            {
+                this.CreatedByField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreatedDateTime
+        {
+            get
+            {
+                return this.CreatedDateTimeField;
+            }
+            set
+            {
+                this.CreatedDateTimeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description
+        {
+            get
+            {
+                return this.DescriptionField;
+            }
+            set
+            {
+                this.DescriptionField = value;
             }
         }
         
@@ -206,6 +521,45 @@ namespace InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup
             set
             {
                 this.JournalNameIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int JournalSessionId
+        {
+            get
+            {
+                return this.JournalSessionIdField;
+            }
+            set
+            {
+                this.JournalSessionIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ModifiedBy
+        {
+            get
+            {
+                return this.ModifiedByField;
+            }
+            set
+            {
+                this.ModifiedByField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ModifiedDateTime
+        {
+            get
+            {
+                return this.ModifiedDateTimeField;
+            }
+            set
+            {
+                this.ModifiedDateTimeField = value;
             }
         }
         
@@ -245,193 +599,6 @@ namespace InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup
             set
             {
                 this.PostedUserIdField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GMKInventJournalTransDataContract", Namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application")]
-    public partial class GMKInventJournalTransDataContract : InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.XppObjectBase
-    {
-        
-        private decimal CountedField;
-        
-        private string InventBatchIdField;
-        
-        private string InventLocationIdField;
-        
-        private decimal InventOnHandField;
-        
-        private string InventSiteIdField;
-        
-        private string ItemIdField;
-        
-        private string ItemNameField;
-        
-        private string JournalIdField;
-        
-        private decimal QtyField;
-        
-        private System.DateTime TransDateField;
-        
-        private string UnitIdField;
-        
-        private string WMSLocationIdField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal Counted
-        {
-            get
-            {
-                return this.CountedField;
-            }
-            set
-            {
-                this.CountedField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string InventBatchId
-        {
-            get
-            {
-                return this.InventBatchIdField;
-            }
-            set
-            {
-                this.InventBatchIdField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string InventLocationId
-        {
-            get
-            {
-                return this.InventLocationIdField;
-            }
-            set
-            {
-                this.InventLocationIdField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal InventOnHand
-        {
-            get
-            {
-                return this.InventOnHandField;
-            }
-            set
-            {
-                this.InventOnHandField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string InventSiteId
-        {
-            get
-            {
-                return this.InventSiteIdField;
-            }
-            set
-            {
-                this.InventSiteIdField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ItemId
-        {
-            get
-            {
-                return this.ItemIdField;
-            }
-            set
-            {
-                this.ItemIdField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ItemName
-        {
-            get
-            {
-                return this.ItemNameField;
-            }
-            set
-            {
-                this.ItemNameField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string JournalId
-        {
-            get
-            {
-                return this.JournalIdField;
-            }
-            set
-            {
-                this.JournalIdField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public decimal Qty
-        {
-            get
-            {
-                return this.QtyField;
-            }
-            set
-            {
-                this.QtyField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime TransDate
-        {
-            get
-            {
-                return this.TransDateField;
-            }
-            set
-            {
-                this.TransDateField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string UnitId
-        {
-            get
-            {
-                return this.UnitIdField;
-            }
-            set
-            {
-                this.UnitIdField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string WMSLocationId
-        {
-            get
-            {
-                return this.WMSLocationIdField;
-            }
-            set
-            {
-                this.WMSLocationIdField = value;
             }
         }
     }
@@ -520,6 +687,268 @@ namespace InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GMKInventJournalTransDataContract", Namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application")]
+    public partial class GMKInventJournalTransDataContract : InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.XppObjectBase
+    {
+        
+        private decimal CountedField;
+        
+        private string CreatedByField;
+        
+        private System.DateTime CreatedDateTimeField;
+        
+        private string InventBatchIdField;
+        
+        private string InventLocationIdField;
+        
+        private decimal InventOnHandField;
+        
+        private string InventSiteIdField;
+        
+        private string InventTransIdField;
+        
+        private string ItemIdField;
+        
+        private string ItemNameField;
+        
+        private string JournalIdField;
+        
+        private string ModifiedByField;
+        
+        private System.DateTime ModifiedDateTimeField;
+        
+        private decimal QtyField;
+        
+        private System.DateTime TransDateField;
+        
+        private string UnitIdField;
+        
+        private string WMSLocationIdField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Counted
+        {
+            get
+            {
+                return this.CountedField;
+            }
+            set
+            {
+                this.CountedField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CreatedBy
+        {
+            get
+            {
+                return this.CreatedByField;
+            }
+            set
+            {
+                this.CreatedByField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime CreatedDateTime
+        {
+            get
+            {
+                return this.CreatedDateTimeField;
+            }
+            set
+            {
+                this.CreatedDateTimeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string InventBatchId
+        {
+            get
+            {
+                return this.InventBatchIdField;
+            }
+            set
+            {
+                this.InventBatchIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string InventLocationId
+        {
+            get
+            {
+                return this.InventLocationIdField;
+            }
+            set
+            {
+                this.InventLocationIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal InventOnHand
+        {
+            get
+            {
+                return this.InventOnHandField;
+            }
+            set
+            {
+                this.InventOnHandField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string InventSiteId
+        {
+            get
+            {
+                return this.InventSiteIdField;
+            }
+            set
+            {
+                this.InventSiteIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string InventTransId
+        {
+            get
+            {
+                return this.InventTransIdField;
+            }
+            set
+            {
+                this.InventTransIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ItemId
+        {
+            get
+            {
+                return this.ItemIdField;
+            }
+            set
+            {
+                this.ItemIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ItemName
+        {
+            get
+            {
+                return this.ItemNameField;
+            }
+            set
+            {
+                this.ItemNameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string JournalId
+        {
+            get
+            {
+                return this.JournalIdField;
+            }
+            set
+            {
+                this.JournalIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ModifiedBy
+        {
+            get
+            {
+                return this.ModifiedByField;
+            }
+            set
+            {
+                this.ModifiedByField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ModifiedDateTime
+        {
+            get
+            {
+                return this.ModifiedDateTimeField;
+            }
+            set
+            {
+                this.ModifiedDateTimeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Qty
+        {
+            get
+            {
+                return this.QtyField;
+            }
+            set
+            {
+                this.QtyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime TransDate
+        {
+            get
+            {
+                return this.TransDateField;
+            }
+            set
+            {
+                this.TransDateField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UnitId
+        {
+            get
+            {
+                return this.UnitIdField;
+            }
+            set
+            {
+                this.UnitIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WMSLocationId
+        {
+            get
+            {
+                return this.WMSLocationIdField;
+            }
+            set
+            {
+                this.WMSLocationIdField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="GMKInventJournalTransPagedDataContract", Namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application")]
     public partial class GMKInventJournalTransPagedDataContract : InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.XppObjectBase
     {
@@ -602,69 +1031,15 @@ namespace InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GMKServiceResponseDataContract", Namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application")]
-    public partial class GMKServiceResponseDataContract : InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.XppObjectBase
+    [System.Runtime.Serialization.DataContractAttribute(Name="GMKInventLocationDataContract", Namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application")]
+    public partial class GMKInventLocationDataContract : InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.XppObjectBase
     {
-        
-        private string MessageField;
-        
-        private bool SuccessField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Message
-        {
-            get
-            {
-                return this.MessageField;
-            }
-            set
-            {
-                this.MessageField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool Success
-        {
-            get
-            {
-                return this.SuccessField;
-            }
-            set
-            {
-                this.SuccessField = value;
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="GMKInventJournalCreateDataContract", Namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application")]
-    public partial class GMKInventJournalCreateDataContract : InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.XppObjectBase
-    {
-        
-        private string InventBatchIdField;
         
         private string InventLocationIdField;
         
         private string InventSiteIdField;
         
-        private string SlsNoField;
-        
-        private string WMSLocationIdField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string InventBatchId
-        {
-            get
-            {
-                return this.InventBatchIdField;
-            }
-            set
-            {
-                this.InventBatchIdField = value;
-            }
-        }
+        private string NameField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string InventLocationId
@@ -693,15 +1068,518 @@ namespace InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SlsNo
+        public string Name
         {
             get
             {
-                return this.SlsNoField;
+                return this.NameField;
             }
             set
             {
-                this.SlsNoField = value;
+                this.NameField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GMKInventTableDataContract", Namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application")]
+    public partial class GMKInventTableDataContract : InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.XppObjectBase
+    {
+        
+        private string DescriptionField;
+        
+        private string ImageField;
+        
+        private string ItemIdField;
+        
+        private string ProductNameField;
+        
+        private InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.EcoResProductType ProductTypeField;
+        
+        private InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.PmfProductType ProductionTypeField;
+        
+        private string SearchNameField;
+        
+        private string TrackingDimensionGroupNameField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description
+        {
+            get
+            {
+                return this.DescriptionField;
+            }
+            set
+            {
+                this.DescriptionField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Image
+        {
+            get
+            {
+                return this.ImageField;
+            }
+            set
+            {
+                this.ImageField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ItemId
+        {
+            get
+            {
+                return this.ItemIdField;
+            }
+            set
+            {
+                this.ItemIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductName
+        {
+            get
+            {
+                return this.ProductNameField;
+            }
+            set
+            {
+                this.ProductNameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.EcoResProductType ProductType
+        {
+            get
+            {
+                return this.ProductTypeField;
+            }
+            set
+            {
+                this.ProductTypeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.PmfProductType ProductionType
+        {
+            get
+            {
+                return this.ProductionTypeField;
+            }
+            set
+            {
+                this.ProductionTypeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SearchName
+        {
+            get
+            {
+                return this.SearchNameField;
+            }
+            set
+            {
+                this.SearchNameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TrackingDimensionGroupName
+        {
+            get
+            {
+                return this.TrackingDimensionGroupNameField;
+            }
+            set
+            {
+                this.TrackingDimensionGroupNameField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GMKInventTablePagedListDataContract", Namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application")]
+    public partial class GMKInventTablePagedListDataContract : InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.XppObjectBase
+    {
+        
+        private InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventTableDataContract[] ItemsField;
+        
+        private int PageNumberField;
+        
+        private int PageSizeField;
+        
+        private int TotalCountField;
+        
+        private int TotalPagesField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventTableDataContract[] Items
+        {
+            get
+            {
+                return this.ItemsField;
+            }
+            set
+            {
+                this.ItemsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PageNumber
+        {
+            get
+            {
+                return this.PageNumberField;
+            }
+            set
+            {
+                this.PageNumberField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PageSize
+        {
+            get
+            {
+                return this.PageSizeField;
+            }
+            set
+            {
+                this.PageSizeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TotalCount
+        {
+            get
+            {
+                return this.TotalCountField;
+            }
+            set
+            {
+                this.TotalCountField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TotalPages
+        {
+            get
+            {
+                return this.TotalPagesField;
+            }
+            set
+            {
+                this.TotalPagesField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GMKOnHandDataContract", Namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application")]
+    public partial class GMKOnHandDataContract : InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.XppObjectBase
+    {
+        
+        private decimal AvailPhysicalField;
+        
+        private decimal DeductedField;
+        
+        private string InventBatchIdField;
+        
+        private string InventLocationIdField;
+        
+        private string InventSerialIdField;
+        
+        private string InventSiteIdField;
+        
+        private string ItemIdField;
+        
+        private decimal OrderedSumField;
+        
+        private decimal PhysicalInventField;
+        
+        private decimal PickedField;
+        
+        private decimal PostedQtyField;
+        
+        private string ProductNameField;
+        
+        private decimal RegisteredField;
+        
+        private decimal ReservOrderedField;
+        
+        private decimal ReservPhysicalField;
+        
+        private string SearchNameField;
+        
+        private string StorageDimensionGroupNameField;
+        
+        private string TrackingDimensionGroupNameField;
+        
+        private string UnitIdField;
+        
+        private string WMSLocationIdField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal AvailPhysical
+        {
+            get
+            {
+                return this.AvailPhysicalField;
+            }
+            set
+            {
+                this.AvailPhysicalField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Deducted
+        {
+            get
+            {
+                return this.DeductedField;
+            }
+            set
+            {
+                this.DeductedField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string InventBatchId
+        {
+            get
+            {
+                return this.InventBatchIdField;
+            }
+            set
+            {
+                this.InventBatchIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string InventLocationId
+        {
+            get
+            {
+                return this.InventLocationIdField;
+            }
+            set
+            {
+                this.InventLocationIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string InventSerialId
+        {
+            get
+            {
+                return this.InventSerialIdField;
+            }
+            set
+            {
+                this.InventSerialIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string InventSiteId
+        {
+            get
+            {
+                return this.InventSiteIdField;
+            }
+            set
+            {
+                this.InventSiteIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ItemId
+        {
+            get
+            {
+                return this.ItemIdField;
+            }
+            set
+            {
+                this.ItemIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal OrderedSum
+        {
+            get
+            {
+                return this.OrderedSumField;
+            }
+            set
+            {
+                this.OrderedSumField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal PhysicalInvent
+        {
+            get
+            {
+                return this.PhysicalInventField;
+            }
+            set
+            {
+                this.PhysicalInventField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Picked
+        {
+            get
+            {
+                return this.PickedField;
+            }
+            set
+            {
+                this.PickedField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal PostedQty
+        {
+            get
+            {
+                return this.PostedQtyField;
+            }
+            set
+            {
+                this.PostedQtyField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductName
+        {
+            get
+            {
+                return this.ProductNameField;
+            }
+            set
+            {
+                this.ProductNameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal Registered
+        {
+            get
+            {
+                return this.RegisteredField;
+            }
+            set
+            {
+                this.RegisteredField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal ReservOrdered
+        {
+            get
+            {
+                return this.ReservOrderedField;
+            }
+            set
+            {
+                this.ReservOrderedField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal ReservPhysical
+        {
+            get
+            {
+                return this.ReservPhysicalField;
+            }
+            set
+            {
+                this.ReservPhysicalField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SearchName
+        {
+            get
+            {
+                return this.SearchNameField;
+            }
+            set
+            {
+                this.SearchNameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string StorageDimensionGroupName
+        {
+            get
+            {
+                return this.StorageDimensionGroupNameField;
+            }
+            set
+            {
+                this.StorageDimensionGroupNameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TrackingDimensionGroupName
+        {
+            get
+            {
+                return this.TrackingDimensionGroupNameField;
+            }
+            set
+            {
+                this.TrackingDimensionGroupNameField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UnitId
+        {
+            get
+            {
+                return this.UnitIdField;
+            }
+            set
+            {
+                this.UnitIdField = value;
             }
         }
         
@@ -719,6 +1597,364 @@ namespace InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GMKOnHandPagedListDataContract", Namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application")]
+    public partial class GMKOnHandPagedListDataContract : InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.XppObjectBase
+    {
+        
+        private InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKOnHandDataContract[] ItemsField;
+        
+        private int PageNumberField;
+        
+        private int PageSizeField;
+        
+        private int TotalCountField;
+        
+        private int TotalPagesField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKOnHandDataContract[] Items
+        {
+            get
+            {
+                return this.ItemsField;
+            }
+            set
+            {
+                this.ItemsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PageNumber
+        {
+            get
+            {
+                return this.PageNumberField;
+            }
+            set
+            {
+                this.PageNumberField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PageSize
+        {
+            get
+            {
+                return this.PageSizeField;
+            }
+            set
+            {
+                this.PageSizeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TotalCount
+        {
+            get
+            {
+                return this.TotalCountField;
+            }
+            set
+            {
+                this.TotalCountField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TotalPages
+        {
+            get
+            {
+                return this.TotalPagesField;
+            }
+            set
+            {
+                this.TotalPagesField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GMKWMSLocationDataContract", Namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application")]
+    public partial class GMKWMSLocationDataContract : InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.XppObjectBase
+    {
+        
+        private string InventLocationIdField;
+        
+        private InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.WMSLocationType LocationTypeField;
+        
+        private int MaxPalletCountField;
+        
+        private decimal MaxVolumeField;
+        
+        private decimal MaxWeightField;
+        
+        private string WMSLocationIdField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string InventLocationId
+        {
+            get
+            {
+                return this.InventLocationIdField;
+            }
+            set
+            {
+                this.InventLocationIdField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.WMSLocationType LocationType
+        {
+            get
+            {
+                return this.LocationTypeField;
+            }
+            set
+            {
+                this.LocationTypeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int MaxPalletCount
+        {
+            get
+            {
+                return this.MaxPalletCountField;
+            }
+            set
+            {
+                this.MaxPalletCountField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal MaxVolume
+        {
+            get
+            {
+                return this.MaxVolumeField;
+            }
+            set
+            {
+                this.MaxVolumeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal MaxWeight
+        {
+            get
+            {
+                return this.MaxWeightField;
+            }
+            set
+            {
+                this.MaxWeightField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WMSLocationId
+        {
+            get
+            {
+                return this.WMSLocationIdField;
+            }
+            set
+            {
+                this.WMSLocationIdField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GMKWMSLocationPagedListDataContract", Namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application")]
+    public partial class GMKWMSLocationPagedListDataContract : InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.XppObjectBase
+    {
+        
+        private InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKWMSLocationDataContract[] ItemsField;
+        
+        private int PageNumberField;
+        
+        private int PageSizeField;
+        
+        private int TotalCountField;
+        
+        private int TotalPagesField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKWMSLocationDataContract[] Items
+        {
+            get
+            {
+                return this.ItemsField;
+            }
+            set
+            {
+                this.ItemsField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PageNumber
+        {
+            get
+            {
+                return this.PageNumberField;
+            }
+            set
+            {
+                this.PageNumberField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PageSize
+        {
+            get
+            {
+                return this.PageSizeField;
+            }
+            set
+            {
+                this.PageSizeField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TotalCount
+        {
+            get
+            {
+                return this.TotalCountField;
+            }
+            set
+            {
+                this.TotalCountField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TotalPages
+        {
+            get
+            {
+                return this.TotalPagesField;
+            }
+            set
+            {
+                this.TotalPagesField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GMKCountingJournalSummaryDataContract", Namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application")]
+    public partial class GMKCountingJournalSummaryDataContract : InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.XppObjectBase
+    {
+        
+        private int CountedLinesField;
+        
+        private int PendingLinesField;
+        
+        private int TotalLinesField;
+        
+        private decimal VarianceAmountField;
+        
+        private int VarianceLinesField;
+        
+        private decimal VarianceQtyField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CountedLines
+        {
+            get
+            {
+                return this.CountedLinesField;
+            }
+            set
+            {
+                this.CountedLinesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PendingLines
+        {
+            get
+            {
+                return this.PendingLinesField;
+            }
+            set
+            {
+                this.PendingLinesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TotalLines
+        {
+            get
+            {
+                return this.TotalLinesField;
+            }
+            set
+            {
+                this.TotalLinesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal VarianceAmount
+        {
+            get
+            {
+                return this.VarianceAmountField;
+            }
+            set
+            {
+                this.VarianceAmountField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int VarianceLines
+        {
+            get
+            {
+                return this.VarianceLinesField;
+            }
+            set
+            {
+                this.VarianceLinesField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal VarianceQty
+        {
+            get
+            {
+                return this.VarianceQtyField;
+            }
+            set
+            {
+                this.VarianceQtyField = value;
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="NoYes", Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp")]
     public enum NoYes : int
@@ -729,6 +1965,69 @@ namespace InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Yes = 1,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EcoResProductType", Namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application")]
+    public enum EcoResProductType : int
+    {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Item = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Service = 2,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PmfProductType", Namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application")]
+    public enum PmfProductType : int
+    {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Co_Product = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        By_Product = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        None = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        MainItem = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        BOM = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Formula = 5,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WMSLocationType", Namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application")]
+    public enum WMSLocationType : int
+    {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Buffer = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Pick = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InputPort = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OutputPort = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ProductionInput = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        InspectionLocation = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        KanbanSupermarket = 6,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1065,20 +2364,26 @@ namespace InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup
     public interface GMKInventoryManagementService
     {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GMKInventoryManagementService/getCountingJournalSummary", ReplyAction="http://tempuri.org/GMKInventoryManagementService/getCountingJournalSummaryRespons" +
+            "e")]
+        [System.ServiceModel.FaultContractAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.AifFault), Action="http://tempuri.org/GMKInventoryManagementService/getCountingJournalSummaryAifFaul" +
+            "tFault", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetCountingJournalSummaryResponse> getCountingJournalSummaryAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetCountingJournalSummaryRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GMKInventoryManagementService/getOnHand", ReplyAction="http://tempuri.org/GMKInventoryManagementService/getOnHandResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.AifFault), Action="http://tempuri.org/GMKInventoryManagementService/getOnHandAifFaultFault", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandResponse> getOnHandAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GMKInventoryManagementService/getOnHandInventLocationList", ReplyAction="http://tempuri.org/GMKInventoryManagementService/getOnHandInventLocationListRespo" +
+            "nse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.AifFault), Action="http://tempuri.org/GMKInventoryManagementService/getOnHandInventLocationListAifFa" +
+            "ultFault", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandInventLocationListResponse> getOnHandInventLocationListAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandInventLocationListRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GMKInventoryManagementService/createCountingJournal", ReplyAction="http://tempuri.org/GMKInventoryManagementService/createCountingJournalResponse")]
         [System.ServiceModel.FaultContractAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.AifFault), Action="http://tempuri.org/GMKInventoryManagementService/createCountingJournalAifFaultFau" +
             "lt", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
         System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceCreateCountingJournalResponse> createCountingJournalAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceCreateCountingJournalRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GMKInventoryManagementService/getInventJournalTable", ReplyAction="http://tempuri.org/GMKInventoryManagementService/getInventJournalTableResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.AifFault), Action="http://tempuri.org/GMKInventoryManagementService/getInventJournalTableAifFaultFau" +
-            "lt", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
-        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTableResponse> getInventJournalTableAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTableRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GMKInventoryManagementService/getInventJournalTrans", ReplyAction="http://tempuri.org/GMKInventoryManagementService/getInventJournalTransResponse")]
-        [System.ServiceModel.FaultContractAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.AifFault), Action="http://tempuri.org/GMKInventoryManagementService/getInventJournalTransAifFaultFau" +
-            "lt", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
-        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTransResponse> getInventJournalTransAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTransRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GMKInventoryManagementService/getInventJournalTransPaged", ReplyAction="http://tempuri.org/GMKInventoryManagementService/getInventJournalTransPagedRespon" +
             "se")]
@@ -1086,11 +2391,249 @@ namespace InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup
             "ltFault", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
         System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTransPagedResponse> getInventJournalTransPagedAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTransPagedRequest request);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GMKInventoryManagementService/getInventBatchPagedList", ReplyAction="http://tempuri.org/GMKInventoryManagementService/getInventBatchPagedListResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.AifFault), Action="http://tempuri.org/GMKInventoryManagementService/getInventBatchPagedListAifFaultF" +
+            "ault", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventBatchPagedListResponse> getInventBatchPagedListAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventBatchPagedListRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GMKInventoryManagementService/getInventBatch", ReplyAction="http://tempuri.org/GMKInventoryManagementService/getInventBatchResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.AifFault), Action="http://tempuri.org/GMKInventoryManagementService/getInventBatchAifFaultFault", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventBatchResponse> getInventBatchAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventBatchRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GMKInventoryManagementService/createCountingJournalLine", ReplyAction="http://tempuri.org/GMKInventoryManagementService/createCountingJournalLineRespons" +
+            "e")]
+        [System.ServiceModel.FaultContractAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.AifFault), Action="http://tempuri.org/GMKInventoryManagementService/createCountingJournalLineAifFaul" +
+            "tFault", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceCreateCountingJournalLineResponse> createCountingJournalLineAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceCreateCountingJournalLineRequest request);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GMKInventoryManagementService/getInventJournalTablePaged", ReplyAction="http://tempuri.org/GMKInventoryManagementService/getInventJournalTablePagedRespon" +
             "se")]
         [System.ServiceModel.FaultContractAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.AifFault), Action="http://tempuri.org/GMKInventoryManagementService/getInventJournalTablePagedAifFau" +
             "ltFault", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
         System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTablePagedResponse> getInventJournalTablePagedAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTablePagedRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GMKInventoryManagementService/getInventJournalTrans", ReplyAction="http://tempuri.org/GMKInventoryManagementService/getInventJournalTransResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.AifFault), Action="http://tempuri.org/GMKInventoryManagementService/getInventJournalTransAifFaultFau" +
+            "lt", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTransResponse> getInventJournalTransAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTransRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GMKInventoryManagementService/getInventJournalTransByBatch", ReplyAction="http://tempuri.org/GMKInventoryManagementService/getInventJournalTransByBatchResp" +
+            "onse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.AifFault), Action="http://tempuri.org/GMKInventoryManagementService/getInventJournalTransByBatchAifF" +
+            "aultFault", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTransByBatchResponse> getInventJournalTransByBatchAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTransByBatchRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GMKInventoryManagementService/getInventTablePagedList", ReplyAction="http://tempuri.org/GMKInventoryManagementService/getInventTablePagedListResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.AifFault), Action="http://tempuri.org/GMKInventoryManagementService/getInventTablePagedListAifFaultF" +
+            "ault", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventTablePagedListResponse> getInventTablePagedListAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventTablePagedListRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GMKInventoryManagementService/deleteCountingJournalLine", ReplyAction="http://tempuri.org/GMKInventoryManagementService/deleteCountingJournalLineRespons" +
+            "e")]
+        [System.ServiceModel.FaultContractAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.AifFault), Action="http://tempuri.org/GMKInventoryManagementService/deleteCountingJournalLineAifFaul" +
+            "tFault", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceDeleteCountingJournalLineResponse> deleteCountingJournalLineAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceDeleteCountingJournalLineRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GMKInventoryManagementService/getInventLocationList", ReplyAction="http://tempuri.org/GMKInventoryManagementService/getInventLocationListResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.AifFault), Action="http://tempuri.org/GMKInventoryManagementService/getInventLocationListAifFaultFau" +
+            "lt", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventLocationListResponse> getInventLocationListAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventLocationListRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GMKInventoryManagementService/getOnHandPagedList", ReplyAction="http://tempuri.org/GMKInventoryManagementService/getOnHandPagedListResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.AifFault), Action="http://tempuri.org/GMKInventoryManagementService/getOnHandPagedListAifFaultFault", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandPagedListResponse> getOnHandPagedListAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandPagedListRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GMKInventoryManagementService/updateBlockInventJournalTable", ReplyAction="http://tempuri.org/GMKInventoryManagementService/updateBlockInventJournalTableRes" +
+            "ponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.AifFault), Action="http://tempuri.org/GMKInventoryManagementService/updateBlockInventJournalTableAif" +
+            "FaultFault", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceUpdateBlockInventJournalTableResponse> updateBlockInventJournalTableAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceUpdateBlockInventJournalTableRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GMKInventoryManagementService/getInventTable", ReplyAction="http://tempuri.org/GMKInventoryManagementService/getInventTableResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.AifFault), Action="http://tempuri.org/GMKInventoryManagementService/getInventTableAifFaultFault", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventTableResponse> getInventTableAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventTableRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GMKInventoryManagementService/getWMSLocation", ReplyAction="http://tempuri.org/GMKInventoryManagementService/getWMSLocationResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.AifFault), Action="http://tempuri.org/GMKInventoryManagementService/getWMSLocationAifFaultFault", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetWMSLocationResponse> getWMSLocationAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetWMSLocationRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GMKInventoryManagementService/getWMSLocationPagedList", ReplyAction="http://tempuri.org/GMKInventoryManagementService/getWMSLocationPagedListResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.AifFault), Action="http://tempuri.org/GMKInventoryManagementService/getWMSLocationPagedListAifFaultF" +
+            "ault", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetWMSLocationPagedListResponse> getWMSLocationPagedListAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetWMSLocationPagedListRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GMKInventoryManagementService/updateCountingJournalLine", ReplyAction="http://tempuri.org/GMKInventoryManagementService/updateCountingJournalLineRespons" +
+            "e")]
+        [System.ServiceModel.FaultContractAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.AifFault), Action="http://tempuri.org/GMKInventoryManagementService/updateCountingJournalLineAifFaul" +
+            "tFault", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceUpdateCountingJournalLineResponse> updateCountingJournalLineAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceUpdateCountingJournalLineRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GMKInventoryManagementService/getOnHandWMSLocationPagedList", ReplyAction="http://tempuri.org/GMKInventoryManagementService/getOnHandWMSLocationPagedListRes" +
+            "ponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.AifFault), Action="http://tempuri.org/GMKInventoryManagementService/getOnHandWMSLocationPagedListAif" +
+            "FaultFault", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandWMSLocationPagedListResponse> getOnHandWMSLocationPagedListAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandWMSLocationPagedListRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GMKInventoryManagementService/getInventJournalTable", ReplyAction="http://tempuri.org/GMKInventoryManagementService/getInventJournalTableResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.AifFault), Action="http://tempuri.org/GMKInventoryManagementService/getInventJournalTableAifFaultFau" +
+            "lt", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTableResponse> getInventJournalTableAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTableRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GMKInventoryManagementService/getSessionId", ReplyAction="http://tempuri.org/GMKInventoryManagementService/getSessionIdResponse")]
+        [System.ServiceModel.FaultContractAttribute(typeof(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.AifFault), Action="http://tempuri.org/GMKInventoryManagementService/getSessionIdAifFaultFault", Name="AifFault", Namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault")]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetSessionIdResponse> getSessionIdAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetSessionIdRequest request);
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetCountingJournalSummaryRequest", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetCountingJournalSummaryRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts")]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public string journalId;
+        
+        public GMKInventoryManagementServiceGetCountingJournalSummaryRequest()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetCountingJournalSummaryRequest(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, string journalId)
+        {
+            this.CallContext = CallContext;
+            this.journalId = journalId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetCountingJournalSummaryResponse", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetCountingJournalSummaryResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKCountingJournalSummaryDataContract response;
+        
+        public GMKInventoryManagementServiceGetCountingJournalSummaryResponse()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetCountingJournalSummaryResponse(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKCountingJournalSummaryDataContract response)
+        {
+            this.response = response;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetOnHandRequest", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetOnHandRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts")]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public string itemId;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=1)]
+        public string inventBatchId;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=2)]
+        public string inventSiteId;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=3)]
+        public string inventLocationId;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=4)]
+        public string wmsLocationId;
+        
+        public GMKInventoryManagementServiceGetOnHandRequest()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetOnHandRequest(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, string itemId, string inventBatchId, string inventSiteId, string inventLocationId, string wmsLocationId)
+        {
+            this.CallContext = CallContext;
+            this.itemId = itemId;
+            this.inventBatchId = inventBatchId;
+            this.inventSiteId = inventSiteId;
+            this.inventLocationId = inventLocationId;
+            this.wmsLocationId = wmsLocationId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetOnHandResponse", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetOnHandResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKOnHandDataContract response;
+        
+        public GMKInventoryManagementServiceGetOnHandResponse()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetOnHandResponse(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKOnHandDataContract response)
+        {
+            this.response = response;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetOnHandInventLocationListRequest", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetOnHandInventLocationListRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts")]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public string searchQuery;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=1)]
+        public string inventSiteId;
+        
+        public GMKInventoryManagementServiceGetOnHandInventLocationListRequest()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetOnHandInventLocationListRequest(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, string searchQuery, string inventSiteId)
+        {
+            this.CallContext = CallContext;
+            this.searchQuery = searchQuery;
+            this.inventSiteId = inventSiteId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetOnHandInventLocationListResponse", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetOnHandInventLocationListResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventLocationDataContract[] response;
+        
+        public GMKInventoryManagementServiceGetOnHandInventLocationListResponse()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetOnHandInventLocationListResponse(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventLocationDataContract[] response)
+        {
+            this.response = response;
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1125,101 +2668,13 @@ namespace InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup
     {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
-        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKServiceResponseDataContract response;
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTableDataContract response;
         
         public GMKInventoryManagementServiceCreateCountingJournalResponse()
         {
         }
         
-        public GMKInventoryManagementServiceCreateCountingJournalResponse(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKServiceResponseDataContract response)
-        {
-            this.response = response;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetInventJournalTableRequest", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
-    public partial class GMKInventoryManagementServiceGetInventJournalTableRequest
-    {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts")]
-        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
-        public string journalId;
-        
-        public GMKInventoryManagementServiceGetInventJournalTableRequest()
-        {
-        }
-        
-        public GMKInventoryManagementServiceGetInventJournalTableRequest(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, string journalId)
-        {
-            this.CallContext = CallContext;
-            this.journalId = journalId;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetInventJournalTableResponse", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
-    public partial class GMKInventoryManagementServiceGetInventJournalTableResponse
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
-        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTableDataContract response;
-        
-        public GMKInventoryManagementServiceGetInventJournalTableResponse()
-        {
-        }
-        
-        public GMKInventoryManagementServiceGetInventJournalTableResponse(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTableDataContract response)
-        {
-            this.response = response;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetInventJournalTransRequest", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
-    public partial class GMKInventoryManagementServiceGetInventJournalTransRequest
-    {
-        
-        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts")]
-        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
-        public string inventTransId;
-        
-        public GMKInventoryManagementServiceGetInventJournalTransRequest()
-        {
-        }
-        
-        public GMKInventoryManagementServiceGetInventJournalTransRequest(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, string inventTransId)
-        {
-            this.CallContext = CallContext;
-            this.inventTransId = inventTransId;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetInventJournalTransResponse", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
-    public partial class GMKInventoryManagementServiceGetInventJournalTransResponse
-    {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
-        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTransDataContract response;
-        
-        public GMKInventoryManagementServiceGetInventJournalTransResponse()
-        {
-        }
-        
-        public GMKInventoryManagementServiceGetInventJournalTransResponse(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTransDataContract response)
+        public GMKInventoryManagementServiceCreateCountingJournalResponse(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTableDataContract response)
         {
             this.response = response;
         }
@@ -1280,6 +2735,154 @@ namespace InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetInventBatchPagedListRequest", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetInventBatchPagedListRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts")]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public int pageNumber;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=1)]
+        public int pageSize;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=2)]
+        public string itemId;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=3)]
+        public string searchQuery;
+        
+        public GMKInventoryManagementServiceGetInventBatchPagedListRequest()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetInventBatchPagedListRequest(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, int pageNumber, int pageSize, string itemId, string searchQuery)
+        {
+            this.CallContext = CallContext;
+            this.pageNumber = pageNumber;
+            this.pageSize = pageSize;
+            this.itemId = itemId;
+            this.searchQuery = searchQuery;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetInventBatchPagedListResponse", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetInventBatchPagedListResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKBatchPagedListDataContract response;
+        
+        public GMKInventoryManagementServiceGetInventBatchPagedListResponse()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetInventBatchPagedListResponse(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKBatchPagedListDataContract response)
+        {
+            this.response = response;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetInventBatchRequest", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetInventBatchRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts")]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public string itemId;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=1)]
+        public string inventBatchId;
+        
+        public GMKInventoryManagementServiceGetInventBatchRequest()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetInventBatchRequest(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, string itemId, string inventBatchId)
+        {
+            this.CallContext = CallContext;
+            this.itemId = itemId;
+            this.inventBatchId = inventBatchId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetInventBatchResponse", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetInventBatchResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKBatchDataContract response;
+        
+        public GMKInventoryManagementServiceGetInventBatchResponse()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetInventBatchResponse(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKBatchDataContract response)
+        {
+            this.response = response;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceCreateCountingJournalLineRequest", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceCreateCountingJournalLineRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts")]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTransDataContract parm;
+        
+        public GMKInventoryManagementServiceCreateCountingJournalLineRequest()
+        {
+        }
+        
+        public GMKInventoryManagementServiceCreateCountingJournalLineRequest(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTransDataContract parm)
+        {
+            this.CallContext = CallContext;
+            this.parm = parm;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceCreateCountingJournalLineResponse", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceCreateCountingJournalLineResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKServiceResponseDataContract response;
+        
+        public GMKInventoryManagementServiceCreateCountingJournalLineResponse()
+        {
+        }
+        
+        public GMKInventoryManagementServiceCreateCountingJournalLineResponse(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKServiceResponseDataContract response)
+        {
+            this.response = response;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetInventJournalTablePagedRequest", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
     public partial class GMKInventoryManagementServiceGetInventJournalTablePagedRequest
     {
@@ -1324,6 +2927,694 @@ namespace InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup
         }
         
         public GMKInventoryManagementServiceGetInventJournalTablePagedResponse(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTablePagedDataContract response)
+        {
+            this.response = response;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetInventJournalTransRequest", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetInventJournalTransRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts")]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public string inventTransId;
+        
+        public GMKInventoryManagementServiceGetInventJournalTransRequest()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetInventJournalTransRequest(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, string inventTransId)
+        {
+            this.CallContext = CallContext;
+            this.inventTransId = inventTransId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetInventJournalTransResponse", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetInventJournalTransResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTransDataContract response;
+        
+        public GMKInventoryManagementServiceGetInventJournalTransResponse()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetInventJournalTransResponse(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTransDataContract response)
+        {
+            this.response = response;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetInventJournalTransByBatchRequest", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetInventJournalTransByBatchRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts")]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public string journalId;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=1)]
+        public string itemId;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=2)]
+        public string inventSiteId;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=3)]
+        public string inventLocationId;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=4)]
+        public string wmsLocationId;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=5)]
+        public string inventBatchId;
+        
+        public GMKInventoryManagementServiceGetInventJournalTransByBatchRequest()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetInventJournalTransByBatchRequest(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, string journalId, string itemId, string inventSiteId, string inventLocationId, string wmsLocationId, string inventBatchId)
+        {
+            this.CallContext = CallContext;
+            this.journalId = journalId;
+            this.itemId = itemId;
+            this.inventSiteId = inventSiteId;
+            this.inventLocationId = inventLocationId;
+            this.wmsLocationId = wmsLocationId;
+            this.inventBatchId = inventBatchId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetInventJournalTransByBatchResponse", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetInventJournalTransByBatchResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTransDataContract response;
+        
+        public GMKInventoryManagementServiceGetInventJournalTransByBatchResponse()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetInventJournalTransByBatchResponse(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTransDataContract response)
+        {
+            this.response = response;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetInventTablePagedListRequest", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetInventTablePagedListRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts")]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public int pageNumber;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=1)]
+        public int pageSize;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=2)]
+        public string searchQuery;
+        
+        public GMKInventoryManagementServiceGetInventTablePagedListRequest()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetInventTablePagedListRequest(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, int pageNumber, int pageSize, string searchQuery)
+        {
+            this.CallContext = CallContext;
+            this.pageNumber = pageNumber;
+            this.pageSize = pageSize;
+            this.searchQuery = searchQuery;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetInventTablePagedListResponse", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetInventTablePagedListResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventTablePagedListDataContract response;
+        
+        public GMKInventoryManagementServiceGetInventTablePagedListResponse()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetInventTablePagedListResponse(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventTablePagedListDataContract response)
+        {
+            this.response = response;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceDeleteCountingJournalLineRequest", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceDeleteCountingJournalLineRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts")]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public string inventTransId;
+        
+        public GMKInventoryManagementServiceDeleteCountingJournalLineRequest()
+        {
+        }
+        
+        public GMKInventoryManagementServiceDeleteCountingJournalLineRequest(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, string inventTransId)
+        {
+            this.CallContext = CallContext;
+            this.inventTransId = inventTransId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceDeleteCountingJournalLineResponse", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceDeleteCountingJournalLineResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKServiceResponseDataContract response;
+        
+        public GMKInventoryManagementServiceDeleteCountingJournalLineResponse()
+        {
+        }
+        
+        public GMKInventoryManagementServiceDeleteCountingJournalLineResponse(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKServiceResponseDataContract response)
+        {
+            this.response = response;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetInventLocationListRequest", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetInventLocationListRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts")]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventLocationDataContract parm;
+        
+        public GMKInventoryManagementServiceGetInventLocationListRequest()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetInventLocationListRequest(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventLocationDataContract parm)
+        {
+            this.CallContext = CallContext;
+            this.parm = parm;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetInventLocationListResponse", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetInventLocationListResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventLocationDataContract[] response;
+        
+        public GMKInventoryManagementServiceGetInventLocationListResponse()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetInventLocationListResponse(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventLocationDataContract[] response)
+        {
+            this.response = response;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetOnHandPagedListRequest", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetOnHandPagedListRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts")]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public int pageNumber;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=1)]
+        public int pageSize;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=2)]
+        public string searchQuery;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=3)]
+        public string inventLocationId;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=4)]
+        public string wmsLocationId;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=5)]
+        public string storageDimensionGroup;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=6)]
+        public string trackingDimensionGroup;
+        
+        public GMKInventoryManagementServiceGetOnHandPagedListRequest()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetOnHandPagedListRequest(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, int pageNumber, int pageSize, string searchQuery, string inventLocationId, string wmsLocationId, string storageDimensionGroup, string trackingDimensionGroup)
+        {
+            this.CallContext = CallContext;
+            this.pageNumber = pageNumber;
+            this.pageSize = pageSize;
+            this.searchQuery = searchQuery;
+            this.inventLocationId = inventLocationId;
+            this.wmsLocationId = wmsLocationId;
+            this.storageDimensionGroup = storageDimensionGroup;
+            this.trackingDimensionGroup = trackingDimensionGroup;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetOnHandPagedListResponse", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetOnHandPagedListResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKOnHandPagedListDataContract response;
+        
+        public GMKInventoryManagementServiceGetOnHandPagedListResponse()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetOnHandPagedListResponse(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKOnHandPagedListDataContract response)
+        {
+            this.response = response;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceUpdateBlockInventJournalTableRequest", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceUpdateBlockInventJournalTableRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts")]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public string inventJournalId;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=1)]
+        public bool lockRecord;
+        
+        public GMKInventoryManagementServiceUpdateBlockInventJournalTableRequest()
+        {
+        }
+        
+        public GMKInventoryManagementServiceUpdateBlockInventJournalTableRequest(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, string inventJournalId, bool lockRecord)
+        {
+            this.CallContext = CallContext;
+            this.inventJournalId = inventJournalId;
+            this.lockRecord = lockRecord;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceUpdateBlockInventJournalTableResponse", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceUpdateBlockInventJournalTableResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKServiceResponseDataContract response;
+        
+        public GMKInventoryManagementServiceUpdateBlockInventJournalTableResponse()
+        {
+        }
+        
+        public GMKInventoryManagementServiceUpdateBlockInventJournalTableResponse(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKServiceResponseDataContract response)
+        {
+            this.response = response;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetInventTableRequest", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetInventTableRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts")]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public string itemId;
+        
+        public GMKInventoryManagementServiceGetInventTableRequest()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetInventTableRequest(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, string itemId)
+        {
+            this.CallContext = CallContext;
+            this.itemId = itemId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetInventTableResponse", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetInventTableResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventTableDataContract response;
+        
+        public GMKInventoryManagementServiceGetInventTableResponse()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetInventTableResponse(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventTableDataContract response)
+        {
+            this.response = response;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetWMSLocationRequest", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetWMSLocationRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts")]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKWMSLocationDataContract parm;
+        
+        public GMKInventoryManagementServiceGetWMSLocationRequest()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetWMSLocationRequest(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKWMSLocationDataContract parm)
+        {
+            this.CallContext = CallContext;
+            this.parm = parm;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetWMSLocationResponse", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetWMSLocationResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKWMSLocationDataContract response;
+        
+        public GMKInventoryManagementServiceGetWMSLocationResponse()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetWMSLocationResponse(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKWMSLocationDataContract response)
+        {
+            this.response = response;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetWMSLocationPagedListRequest", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetWMSLocationPagedListRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts")]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public int pageNumber;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=1)]
+        public int pageSize;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=2)]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKWMSLocationDataContract parm;
+        
+        public GMKInventoryManagementServiceGetWMSLocationPagedListRequest()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetWMSLocationPagedListRequest(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, int pageNumber, int pageSize, InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKWMSLocationDataContract parm)
+        {
+            this.CallContext = CallContext;
+            this.pageNumber = pageNumber;
+            this.pageSize = pageSize;
+            this.parm = parm;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetWMSLocationPagedListResponse", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetWMSLocationPagedListResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKWMSLocationPagedListDataContract response;
+        
+        public GMKInventoryManagementServiceGetWMSLocationPagedListResponse()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetWMSLocationPagedListResponse(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKWMSLocationPagedListDataContract response)
+        {
+            this.response = response;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceUpdateCountingJournalLineRequest", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceUpdateCountingJournalLineRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts")]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTransDataContract parm;
+        
+        public GMKInventoryManagementServiceUpdateCountingJournalLineRequest()
+        {
+        }
+        
+        public GMKInventoryManagementServiceUpdateCountingJournalLineRequest(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTransDataContract parm)
+        {
+            this.CallContext = CallContext;
+            this.parm = parm;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceUpdateCountingJournalLineResponse", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceUpdateCountingJournalLineResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKServiceResponseDataContract response;
+        
+        public GMKInventoryManagementServiceUpdateCountingJournalLineResponse()
+        {
+        }
+        
+        public GMKInventoryManagementServiceUpdateCountingJournalLineResponse(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKServiceResponseDataContract response)
+        {
+            this.response = response;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetOnHandWMSLocationPagedListRequest", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetOnHandWMSLocationPagedListRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts")]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public int pageNumber;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=1)]
+        public int pageSize;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=2)]
+        public string searchQuery;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=3)]
+        public string inventLocationId;
+        
+        public GMKInventoryManagementServiceGetOnHandWMSLocationPagedListRequest()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetOnHandWMSLocationPagedListRequest(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, int pageNumber, int pageSize, string searchQuery, string inventLocationId)
+        {
+            this.CallContext = CallContext;
+            this.pageNumber = pageNumber;
+            this.pageSize = pageSize;
+            this.searchQuery = searchQuery;
+            this.inventLocationId = inventLocationId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetOnHandWMSLocationPagedListResponse", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetOnHandWMSLocationPagedListResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKWMSLocationPagedListDataContract response;
+        
+        public GMKInventoryManagementServiceGetOnHandWMSLocationPagedListResponse()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetOnHandWMSLocationPagedListResponse(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKWMSLocationPagedListDataContract response)
+        {
+            this.response = response;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetInventJournalTableRequest", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetInventJournalTableRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts")]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public string journalId;
+        
+        public GMKInventoryManagementServiceGetInventJournalTableRequest()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetInventJournalTableRequest(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, string journalId)
+        {
+            this.CallContext = CallContext;
+            this.journalId = journalId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetInventJournalTableResponse", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetInventJournalTableResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTableDataContract response;
+        
+        public GMKInventoryManagementServiceGetInventJournalTableResponse()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetInventJournalTableResponse(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTableDataContract response)
+        {
+            this.response = response;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetSessionIdRequest", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetSessionIdRequest
+    {
+        
+        [System.ServiceModel.MessageHeaderAttribute(Namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts")]
+        public InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext;
+        
+        public GMKInventoryManagementServiceGetSessionIdRequest()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetSessionIdRequest(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext)
+        {
+            this.CallContext = CallContext;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="GMKInventoryManagementServiceGetSessionIdResponse", WrapperNamespace="http://tempuri.org", IsWrapped=true)]
+    public partial class GMKInventoryManagementServiceGetSessionIdResponse
+    {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://tempuri.org", Order=0)]
+        public int response;
+        
+        public GMKInventoryManagementServiceGetSessionIdResponse()
+        {
+        }
+        
+        public GMKInventoryManagementServiceGetSessionIdResponse(int response)
         {
             this.response = response;
         }
@@ -1380,6 +3671,53 @@ namespace InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetCountingJournalSummaryResponse> InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService.getCountingJournalSummaryAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetCountingJournalSummaryRequest request)
+        {
+            return base.Channel.getCountingJournalSummaryAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetCountingJournalSummaryResponse> getCountingJournalSummaryAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, string journalId)
+        {
+            InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetCountingJournalSummaryRequest inValue = new InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetCountingJournalSummaryRequest();
+            inValue.CallContext = CallContext;
+            inValue.journalId = journalId;
+            return ((InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService)(this)).getCountingJournalSummaryAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandResponse> InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService.getOnHandAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandRequest request)
+        {
+            return base.Channel.getOnHandAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandResponse> getOnHandAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, string itemId, string inventBatchId, string inventSiteId, string inventLocationId, string wmsLocationId)
+        {
+            InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandRequest inValue = new InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandRequest();
+            inValue.CallContext = CallContext;
+            inValue.itemId = itemId;
+            inValue.inventBatchId = inventBatchId;
+            inValue.inventSiteId = inventSiteId;
+            inValue.inventLocationId = inventLocationId;
+            inValue.wmsLocationId = wmsLocationId;
+            return ((InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService)(this)).getOnHandAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandInventLocationListResponse> InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService.getOnHandInventLocationListAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandInventLocationListRequest request)
+        {
+            return base.Channel.getOnHandInventLocationListAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandInventLocationListResponse> getOnHandInventLocationListAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, string searchQuery, string inventSiteId)
+        {
+            InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandInventLocationListRequest inValue = new InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandInventLocationListRequest();
+            inValue.CallContext = CallContext;
+            inValue.searchQuery = searchQuery;
+            inValue.inventSiteId = inventSiteId;
+            return ((InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService)(this)).getOnHandInventLocationListAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceCreateCountingJournalResponse> InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService.createCountingJournalAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceCreateCountingJournalRequest request)
         {
             return base.Channel.createCountingJournalAsync(request);
@@ -1391,34 +3729,6 @@ namespace InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup
             inValue.CallContext = CallContext;
             inValue.parm = parm;
             return ((InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService)(this)).createCountingJournalAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTableResponse> InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService.getInventJournalTableAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTableRequest request)
-        {
-            return base.Channel.getInventJournalTableAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTableResponse> getInventJournalTableAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, string journalId)
-        {
-            InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTableRequest inValue = new InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTableRequest();
-            inValue.CallContext = CallContext;
-            inValue.journalId = journalId;
-            return ((InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService)(this)).getInventJournalTableAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTransResponse> InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService.getInventJournalTransAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTransRequest request)
-        {
-            return base.Channel.getInventJournalTransAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTransResponse> getInventJournalTransAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, string inventTransId)
-        {
-            InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTransRequest inValue = new InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTransRequest();
-            inValue.CallContext = CallContext;
-            inValue.inventTransId = inventTransId;
-            return ((InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService)(this)).getInventJournalTransAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -1438,6 +3748,52 @@ namespace InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventBatchPagedListResponse> InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService.getInventBatchPagedListAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventBatchPagedListRequest request)
+        {
+            return base.Channel.getInventBatchPagedListAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventBatchPagedListResponse> getInventBatchPagedListAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, int pageNumber, int pageSize, string itemId, string searchQuery)
+        {
+            InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventBatchPagedListRequest inValue = new InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventBatchPagedListRequest();
+            inValue.CallContext = CallContext;
+            inValue.pageNumber = pageNumber;
+            inValue.pageSize = pageSize;
+            inValue.itemId = itemId;
+            inValue.searchQuery = searchQuery;
+            return ((InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService)(this)).getInventBatchPagedListAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventBatchResponse> InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService.getInventBatchAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventBatchRequest request)
+        {
+            return base.Channel.getInventBatchAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventBatchResponse> getInventBatchAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, string itemId, string inventBatchId)
+        {
+            InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventBatchRequest inValue = new InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventBatchRequest();
+            inValue.CallContext = CallContext;
+            inValue.itemId = itemId;
+            inValue.inventBatchId = inventBatchId;
+            return ((InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService)(this)).getInventBatchAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceCreateCountingJournalLineResponse> InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService.createCountingJournalLineAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceCreateCountingJournalLineRequest request)
+        {
+            return base.Channel.createCountingJournalLineAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceCreateCountingJournalLineResponse> createCountingJournalLineAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTransDataContract parm)
+        {
+            InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceCreateCountingJournalLineRequest inValue = new InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceCreateCountingJournalLineRequest();
+            inValue.CallContext = CallContext;
+            inValue.parm = parm;
+            return ((InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService)(this)).createCountingJournalLineAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTablePagedResponse> InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService.getInventJournalTablePagedAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTablePagedRequest request)
         {
             return base.Channel.getInventJournalTablePagedAsync(request);
@@ -1451,6 +3807,220 @@ namespace InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup
             inValue.pageSize = pageSize;
             inValue.parm = parm;
             return ((InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService)(this)).getInventJournalTablePagedAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTransResponse> InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService.getInventJournalTransAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTransRequest request)
+        {
+            return base.Channel.getInventJournalTransAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTransResponse> getInventJournalTransAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, string inventTransId)
+        {
+            InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTransRequest inValue = new InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTransRequest();
+            inValue.CallContext = CallContext;
+            inValue.inventTransId = inventTransId;
+            return ((InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService)(this)).getInventJournalTransAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTransByBatchResponse> InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService.getInventJournalTransByBatchAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTransByBatchRequest request)
+        {
+            return base.Channel.getInventJournalTransByBatchAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTransByBatchResponse> getInventJournalTransByBatchAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, string journalId, string itemId, string inventSiteId, string inventLocationId, string wmsLocationId, string inventBatchId)
+        {
+            InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTransByBatchRequest inValue = new InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTransByBatchRequest();
+            inValue.CallContext = CallContext;
+            inValue.journalId = journalId;
+            inValue.itemId = itemId;
+            inValue.inventSiteId = inventSiteId;
+            inValue.inventLocationId = inventLocationId;
+            inValue.wmsLocationId = wmsLocationId;
+            inValue.inventBatchId = inventBatchId;
+            return ((InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService)(this)).getInventJournalTransByBatchAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventTablePagedListResponse> InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService.getInventTablePagedListAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventTablePagedListRequest request)
+        {
+            return base.Channel.getInventTablePagedListAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventTablePagedListResponse> getInventTablePagedListAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, int pageNumber, int pageSize, string searchQuery)
+        {
+            InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventTablePagedListRequest inValue = new InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventTablePagedListRequest();
+            inValue.CallContext = CallContext;
+            inValue.pageNumber = pageNumber;
+            inValue.pageSize = pageSize;
+            inValue.searchQuery = searchQuery;
+            return ((InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService)(this)).getInventTablePagedListAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceDeleteCountingJournalLineResponse> InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService.deleteCountingJournalLineAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceDeleteCountingJournalLineRequest request)
+        {
+            return base.Channel.deleteCountingJournalLineAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceDeleteCountingJournalLineResponse> deleteCountingJournalLineAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, string inventTransId)
+        {
+            InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceDeleteCountingJournalLineRequest inValue = new InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceDeleteCountingJournalLineRequest();
+            inValue.CallContext = CallContext;
+            inValue.inventTransId = inventTransId;
+            return ((InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService)(this)).deleteCountingJournalLineAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventLocationListResponse> InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService.getInventLocationListAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventLocationListRequest request)
+        {
+            return base.Channel.getInventLocationListAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventLocationListResponse> getInventLocationListAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventLocationDataContract parm)
+        {
+            InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventLocationListRequest inValue = new InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventLocationListRequest();
+            inValue.CallContext = CallContext;
+            inValue.parm = parm;
+            return ((InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService)(this)).getInventLocationListAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandPagedListResponse> InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService.getOnHandPagedListAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandPagedListRequest request)
+        {
+            return base.Channel.getOnHandPagedListAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandPagedListResponse> getOnHandPagedListAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, int pageNumber, int pageSize, string searchQuery, string inventLocationId, string wmsLocationId, string storageDimensionGroup, string trackingDimensionGroup)
+        {
+            InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandPagedListRequest inValue = new InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandPagedListRequest();
+            inValue.CallContext = CallContext;
+            inValue.pageNumber = pageNumber;
+            inValue.pageSize = pageSize;
+            inValue.searchQuery = searchQuery;
+            inValue.inventLocationId = inventLocationId;
+            inValue.wmsLocationId = wmsLocationId;
+            inValue.storageDimensionGroup = storageDimensionGroup;
+            inValue.trackingDimensionGroup = trackingDimensionGroup;
+            return ((InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService)(this)).getOnHandPagedListAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceUpdateBlockInventJournalTableResponse> InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService.updateBlockInventJournalTableAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceUpdateBlockInventJournalTableRequest request)
+        {
+            return base.Channel.updateBlockInventJournalTableAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceUpdateBlockInventJournalTableResponse> updateBlockInventJournalTableAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, string inventJournalId, bool lockRecord)
+        {
+            InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceUpdateBlockInventJournalTableRequest inValue = new InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceUpdateBlockInventJournalTableRequest();
+            inValue.CallContext = CallContext;
+            inValue.inventJournalId = inventJournalId;
+            inValue.lockRecord = lockRecord;
+            return ((InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService)(this)).updateBlockInventJournalTableAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventTableResponse> InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService.getInventTableAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventTableRequest request)
+        {
+            return base.Channel.getInventTableAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventTableResponse> getInventTableAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, string itemId)
+        {
+            InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventTableRequest inValue = new InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventTableRequest();
+            inValue.CallContext = CallContext;
+            inValue.itemId = itemId;
+            return ((InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService)(this)).getInventTableAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetWMSLocationResponse> InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService.getWMSLocationAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetWMSLocationRequest request)
+        {
+            return base.Channel.getWMSLocationAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetWMSLocationResponse> getWMSLocationAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKWMSLocationDataContract parm)
+        {
+            InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetWMSLocationRequest inValue = new InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetWMSLocationRequest();
+            inValue.CallContext = CallContext;
+            inValue.parm = parm;
+            return ((InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService)(this)).getWMSLocationAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetWMSLocationPagedListResponse> InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService.getWMSLocationPagedListAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetWMSLocationPagedListRequest request)
+        {
+            return base.Channel.getWMSLocationPagedListAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetWMSLocationPagedListResponse> getWMSLocationPagedListAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, int pageNumber, int pageSize, InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKWMSLocationDataContract parm)
+        {
+            InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetWMSLocationPagedListRequest inValue = new InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetWMSLocationPagedListRequest();
+            inValue.CallContext = CallContext;
+            inValue.pageNumber = pageNumber;
+            inValue.pageSize = pageSize;
+            inValue.parm = parm;
+            return ((InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService)(this)).getWMSLocationPagedListAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceUpdateCountingJournalLineResponse> InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService.updateCountingJournalLineAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceUpdateCountingJournalLineRequest request)
+        {
+            return base.Channel.updateCountingJournalLineAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceUpdateCountingJournalLineResponse> updateCountingJournalLineAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventJournalTransDataContract parm)
+        {
+            InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceUpdateCountingJournalLineRequest inValue = new InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceUpdateCountingJournalLineRequest();
+            inValue.CallContext = CallContext;
+            inValue.parm = parm;
+            return ((InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService)(this)).updateCountingJournalLineAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandWMSLocationPagedListResponse> InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService.getOnHandWMSLocationPagedListAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandWMSLocationPagedListRequest request)
+        {
+            return base.Channel.getOnHandWMSLocationPagedListAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandWMSLocationPagedListResponse> getOnHandWMSLocationPagedListAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, int pageNumber, int pageSize, string searchQuery, string inventLocationId)
+        {
+            InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandWMSLocationPagedListRequest inValue = new InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetOnHandWMSLocationPagedListRequest();
+            inValue.CallContext = CallContext;
+            inValue.pageNumber = pageNumber;
+            inValue.pageSize = pageSize;
+            inValue.searchQuery = searchQuery;
+            inValue.inventLocationId = inventLocationId;
+            return ((InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService)(this)).getOnHandWMSLocationPagedListAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTableResponse> InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService.getInventJournalTableAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTableRequest request)
+        {
+            return base.Channel.getInventJournalTableAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTableResponse> getInventJournalTableAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext, string journalId)
+        {
+            InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTableRequest inValue = new InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetInventJournalTableRequest();
+            inValue.CallContext = CallContext;
+            inValue.journalId = journalId;
+            return ((InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService)(this)).getInventJournalTableAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetSessionIdResponse> InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService.getSessionIdAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetSessionIdRequest request)
+        {
+            return base.Channel.getSessionIdAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetSessionIdResponse> getSessionIdAsync(InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.CallContext CallContext)
+        {
+            InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetSessionIdRequest inValue = new InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementServiceGetSessionIdRequest();
+            inValue.CallContext = CallContext;
+            return ((InventoryManagementSystem.Service.GMKInventoryManagementServiceGroup.GMKInventoryManagementService)(this)).getSessionIdAsync(inValue);
         }
         
         public virtual System.Threading.Tasks.Task OpenAsync()

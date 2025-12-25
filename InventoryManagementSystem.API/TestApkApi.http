@@ -1,0 +1,95 @@
+﻿### APK Version Management API Tests
+
+@baseUrl = https://localhost:5001
+
+### Get all APK versions
+GET {{baseUrl}}/api/apk
+Accept: application/json
+
+### Get all APK versions with filtering
+GET {{baseUrl}}/api/apk?packageName=com.example.app&latestOnly=true&page=1&pageSize=10
+Accept: application/json
+
+### Get APK version by ID
+GET {{baseUrl}}/api/apk/1
+Accept: application/json
+
+### Get latest version for a package
+GET {{baseUrl}}/api/apk/latest/com.example.app
+Accept: application/json
+
+### Get all distinct apps
+GET {{baseUrl}}/api/apk/apps
+Accept: application/json
+
+### Upload new APK version (use form-data in a real client)
+# POST {{baseUrl}}/api/apk
+# Content-Type: multipart/form-data; boundary=----FormBoundary
+# 
+# ------FormBoundary
+# Content-Disposition: form-data; name="AppName"
+# 
+# My Test App
+# ------FormBoundary
+# Content-Disposition: form-data; name="PackageName"
+# 
+# com.example.testapp
+# ------FormBoundary
+# Content-Disposition: form-data; name="VersionName"
+# 
+# 1.0.0
+# ------FormBoundary
+# Content-Disposition: form-data; name="VersionCode"
+# 
+# 1
+# ------FormBoundary
+# Content-Disposition: form-data; name="ReleaseNotes"
+# 
+# Initial release with basic features
+# ------FormBoundary
+# Content-Disposition: form-data; name="MinAndroidVersion"
+# 
+# 26
+# ------FormBoundary
+# Content-Disposition: form-data; name="ApkFile"; filename="app-release.apk"
+# Content-Type: application/vnd.android.package-archive
+# 
+# < ./path/to/app-release.apk
+# ------FormBoundary--
+
+### Update APK version metadata
+PUT {{baseUrl}}/api/apk/1
+Content-Type: application/json
+
+{
+  "releaseNotes": "Updated release notes with bug fixes",
+  "isLatest": true
+}
+
+### Delete APK version
+DELETE {{baseUrl}}/api/apk/1
+
+### Download APK file
+GET {{baseUrl}}/api/apk/1/download
+
+### Get release notes (HTML)
+GET {{baseUrl}}/api/apk/1/release-notes
+Accept: text/html
+
+### Get Sparkle Appcast XML
+GET {{baseUrl}}/api/apk/appcast/com.example.app
+Accept: application/xml
+
+### ============================================
+### Web Pages (accessible via browser)
+### ============================================
+
+### APK List Page
+# Browse to: {{baseUrl}}/apk
+
+### APK Upload Page
+# Browse to: {{baseUrl}}/apk/upload
+
+### APK Details Page
+# Browse to: {{baseUrl}}/apk/details/1
+

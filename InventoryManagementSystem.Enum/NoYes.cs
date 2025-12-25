@@ -1,4 +1,4 @@
-﻿namespace InventoryManagementSystem.Service.DTO.Enums;
+﻿namespace InventoryManagementSystem.Enum;
 
 public enum NoYes
 {
